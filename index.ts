@@ -23,6 +23,10 @@ const filePath = path.join(__dirname, fileName);
 
   const parsedMenu = parseMenu(rawMenu);
 
+  for (let item of parsedMenu) {
+    console.dir(item, { depth: 4 });
+  }
+
   // await runApp();
 })();
 

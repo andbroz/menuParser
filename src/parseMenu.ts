@@ -1,3 +1,5 @@
+import { parse } from 'date-fns';
+
 export interface MenuItem {
   dayOfWeek: DayOfWeek;
   dateString: string;
@@ -8,9 +10,10 @@ export interface MenuItem {
 export interface Serving {
   mealType: MealType;
   menuType: MenuType;
-  title: string;
-  name: string;
+  servingTitle: string;
+  servingName: string;
   ingredients: string[];
+  allergens?: string[];
 }
 
 export type MenuItems = MenuItem[];
@@ -28,14 +31,25 @@ export function parseMenu(rawMenu: string[]) {
 
   for (let rawItem of rawMenu) {
     const item = rawItem.trim();
+
+    const maybeDate = parse(item, 'dd.MM', new Date(Date.now()));
+
     if (isDayOfWeek(item)) {
       menuItem.dayOfWeek = item;
       continue;
     }
 
+    if (maybeDate instanceof Date && !isNaN(maybeDate.valueOf())) {
+      menuItem.date = maybeDate;
+      menuItem.dateString = item;
+      continue;
+    }
+
     if (item.startsWith('zupa')) {
-      const serving: Partial<Serving> = {};
+      let serving: Partial<Serving> = {};
       serving.mealType = 'soup';
+
+      serving = { ...serving, ...parseServing(item) };
 
       if (!menuItem.servings) {
         menuItem.servings = [];
@@ -45,8 +59,10 @@ export function parseMenu(rawMenu: string[]) {
     }
 
     if (item.startsWith('drugie danie') || item.startsWith('II danie')) {
-      const serving: Partial<Serving> = {};
+      let serving: Partial<Serving> = {};
       serving.mealType = 'mainCourse';
+
+      serving = { ...serving, ...parseServing(item) };
 
       if (!menuItem.servings) {
         menuItem.servings = [];
@@ -76,4 +92,72 @@ function isDayOfWeek(item: string): item is DayOfWeek {
     default:
       return false;
   }
+}
+
+function parseServing(item: string): Partial<Serving> {
+  const [servingTitle, restItem] = item?.split(':').map(v => v.trim());
+  const [servingName, ...ingredientsWithAllergensUnparsed] = restItem
+    ?.split(' - ')
+    .map(v => v.trim());
+
+  let ingredientsWithAllergensArr: string | undefined;
+  let menuTypes: string | undefined;
+
+  if (ingredientsWithAllergensUnparsed.length === 2) {
+    [menuTypes, ingredientsWithAllergensArr] = ingredientsWithAllergensUnparsed;
+  } else if (ingredientsWithAllergensUnparsed.length === 1) {
+    ingredientsWithAllergensArr = ingredientsWithAllergensUnparsed[0];
+  }
+
+  let startOfAllergensIndex = ingredientsWithAllergensArr?.split('').lastIndexOf('(');
+
+  let allergensStringUnparsed =
+    !!startOfAllergensIndex && startOfAllergensIndex > -1
+      ? ingredientsWithAllergensArr?.slice(startOfAllergensIndex)
+      : '';
+
+  const ingredientsString =
+    !!startOfAllergensIndex && startOfAllergensIndex > -1
+      ? ingredientsWithAllergensArr?.slice(0, startOfAllergensIndex)
+      : ingredientsWithAllergensArr;
+
+  const ingredients = ingredientsString?.split(',').map(v => v.trim());
+
+  let allergens: string[] = [];
+
+  if (allergensStringUnparsed && allergensStringUnparsed.length > 0) {
+    const start = allergensStringUnparsed.indexOf('(');
+    const end = allergensStringUnparsed.indexOf(')');
+
+    const allergensString = allergensStringUnparsed.slice(start + 1, end);
+    allergens = allergensString
+      ?.split(',')
+      .filter(v => !isNaN(Number.parseInt(v)))
+      .map(v => v.trim());
+  }
+
+  return {
+    servingTitle,
+    servingName,
+    ingredients,
+    allergens,
+    menuType: getMealType(servingTitle),
+  };
+}
+
+function getMealType(title: string): MenuType {
+  if (title.includes('vege')) {
+    return 'vege';
+  }
+  if (title.includes('bezgluten')) {
+    return 'no-gluten';
+  }
+  if (title.includes('bezmleczn')) {
+    return 'no-milk';
+  }
+  if (title.includes('bezjajeczn')) {
+    return 'no-egg';
+  }
+
+  return 'normal';
 }
