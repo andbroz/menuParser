@@ -1,9 +1,41 @@
 import { chromium, devices } from 'playwright';
+import path from 'node:path';
+
+import { parseMenu } from './src/parseMenu';
+import { readFile } from './src/utils';
+
+const fileName = 'menu.txt';
+
+const filePath = path.join(__dirname, fileName);
+
+(async () => {
+  let rawMenu: string[] = [];
+
+  try {
+    rawMenu = await readFile(filePath);
+  } catch (error) {
+    console.error(error);
+  }
+
+  if (rawMenu.length === 0) {
+    throw new Error('Menu file was not read correctly');
+  }
+
+  const parsedMenu = parseMenu(rawMenu);
+
+  // await runApp();
+})();
 
 async function runApp() {
   // preparation of browser
   const browser = await chromium.launch({ headless: false, slowMo: 1000 });
-  const context = await browser.newContext({ viewport: { width: 1920, height: 1080 } });
+
+  const device = devices['Desktop Edge HiDPI'];
+  const context = await browser.newContext({
+    ...device,
+    screen: { width: 1920, height: 1080 },
+    viewport: { width: 1920, height: 1080 },
+  });
   const page = await context.newPage();
 
   // main code
@@ -16,5 +48,3 @@ async function runApp() {
   await context.close();
   await browser.close();
 }
-
-runApp();
