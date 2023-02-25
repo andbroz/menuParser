@@ -44,8 +44,10 @@ const outputFile = path.join(__dirname, 'menu.json');
 })();
 
 async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<string>) {
+  let isAllIngriedientsAvailable = false;
+
   // preparation of browser
-  const browser = await chromium.launch({ headless: false, slowMo: 500 });
+  const browser = await chromium.launch({ headless: false, slowMo: 200 });
 
   const device = devices['Desktop Edge HiDPI'];
   const context = await browser.newContext({
@@ -61,7 +63,37 @@ async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<s
 
   await login(page);
 
-  await addIngredients(page, ingredients);
+  await page.goto('/');
+  await page.waitForLoadState('domcontentloaded');
+
+  await page.getByRole('link', { name: ' Jadłospisy ' }).click();
+  await page.getByRole('link', { name: ' Składniki' }).click();
+
+  const notFoundIngredients = await addIngredients(page, ingredients);
+
+  if (notFoundIngredients.size > 0) {
+    await page.goto('/');
+    await page.waitForLoadState('domcontentloaded');
+    await page.getByRole('link', { name: ' Jadłospisy ' }).click();
+    await page.getByRole('link', { name: ' Półprodukty' }).click();
+
+    const notFoundSemiProducts = await addIngredients(page, notFoundIngredients, false);
+
+    if (notFoundSemiProducts.size > 0) {
+      console.log('Not found semiproducts:', Array.from(notFoundSemiProducts));
+    } else {
+      isAllIngriedientsAvailable = true;
+    }
+  } else {
+    isAllIngriedientsAvailable = true;
+  }
+
+  if (!isAllIngriedientsAvailable) {
+    console.log('Not found ingresients:', Array.from(notFoundIngredients));
+    console.log('Dodaj brakujące składniki do półproduktów');
+    console.log('Zamykam skrypt');
+    process.exit();
+  }
 
   // const serving = menuData.parsedMenu[0].servings[0];
 
@@ -120,27 +152,35 @@ async function createRecipe(page: Page, serving: Serving) {
   // await page.getByRole('button', { name: 'Utwórz' }).click();
 }
 
-async function addIngredients(page: Page, ingredients: Set<string>) {
-  await page.getByRole('link', { name: ' Jadłospisy ' }).click();
-  // await page.getByRole('link', { name: ' Składniki' }).click();
+async function addIngredients(
+  page: Page,
+  ingredients: Set<string>,
+  isSingleProduct: boolean = true,
+) {
   let foundItems = 0;
   let enabledItemsCount = 0;
 
-  const notFoundElements = [];
+  const notFoundingredients = new Set<string>();
 
   for (const ingredient of ingredients) {
-    await page.getByRole('link', { name: ' Składniki' }).click();
-    await page.getByPlaceholder('Wpisz nazwę składnika (min 3 znaki)').fill(ingredient);
+    if (isSingleProduct) {
+      await page.getByPlaceholder('Wpisz nazwę składnika (min 3 znaki)').fill(ingredient);
+    } else {
+      await page.getByPlaceholder('Wpisz nazwę półproduktu (min 3 znaki)').fill(ingredient);
+    }
+
     await page.getByRole('button', { name: 'Pokaż' }).click();
+    await page.waitForLoadState('domcontentloaded');
 
     const row = await page
-      .getByRole('row', { name: ingredient })
-      .filter({ has: page.locator('td').nth(1).getByText(ingredient, { exact: true }) });
+      .getByRole('row')
+      .filter({ hasText: ingredient })
+      .filter({ has: await page.locator('td').nth(1).getByText(ingredient, { exact: true }) });
 
     const rowsFoundCount = await row.count();
 
     if (rowsFoundCount === 0) {
-      notFoundElements.push(ingredient);
+      notFoundingredients.add(ingredient);
       continue;
     }
 
@@ -163,10 +203,12 @@ async function addIngredients(page: Page, ingredients: Set<string>) {
     }
   }
 
-  console.log({
-    foundItems: foundItems,
-    enabledItemsCount,
-    allItemsCount: ingredients.size,
-    notFoundElements,
-  });
+  // console.log({
+  //   foundItems: foundItems,
+  //   enabledItemsCount,
+  //   allItemsCount: ingredients.size,
+  //   notFoundElements,
+  // });
+
+  return notFoundingredients;
 }
