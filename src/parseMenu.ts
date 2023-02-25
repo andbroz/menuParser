@@ -13,7 +13,7 @@ export interface Serving {
   servingTitle: string;
   servingName: string;
   ingredients: string[];
-  allergens?: string[];
+  allergens: string[];
 }
 
 export type MenuItems = MenuItem[];
@@ -28,9 +28,14 @@ export function parseMenu(rawMenu: string[]) {
   let isItemCompleted = false;
 
   let menuItem: Partial<MenuItem> = {};
+  const allergensMap = new Map<string, string>();
 
   for (let rawItem of rawMenu) {
     const item = rawItem.trim();
+
+    if (item.length === 0) {
+      continue;
+    }
 
     const maybeDate = parse(item, 'dd.MM', new Date(Date.now()));
 
@@ -71,6 +76,18 @@ export function parseMenu(rawMenu: string[]) {
       isItemCompleted = true;
     }
 
+    if (item.startsWith('Oznaczenia alergenów:')) {
+      const index = item.indexOf(':');
+
+      const listOfAllergens = item.slice(index + 1).trim();
+      const allergensArray = listOfAllergens.split(',');
+
+      for (let allergenInfo of allergensArray) {
+        const [key, description] = allergenInfo.split('.').map(v => v.trim());
+        allergensMap.set(key, description);
+      }
+    }
+
     if (isItemCompleted) {
       parsedMenu.push(menuItem as MenuItem);
       menuItem = {};
@@ -78,7 +95,7 @@ export function parseMenu(rawMenu: string[]) {
     }
   }
 
-  return parsedMenu;
+  return { parsedMenu, allergensMap };
 }
 
 function isDayOfWeek(item: string): item is DayOfWeek {

@@ -1,0 +1,1098 @@
+{
+  "parsedMenu": [
+    {
+      "dayOfWeek": "poniedziałek",
+      "date": "2023-02-26T23:00:00.000Z",
+      "dateString": "27.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa",
+          "servingName": "Zupa krem z cukini i marchewki",
+          "ingredients": [
+            "cukinia mrożona",
+            "marchew",
+            "śmietana 18%",
+            "chleb pszenny",
+            "pietruszka korzeń",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście"
+          ],
+          "allergens": ["1", "7"],
+          "menuType": "normal"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "drugie danie",
+          "servingName": "Podudzie z kurczaka z kuskus i fasolką szparagową",
+          "ingredients": [
+            "kurczak udka bez skóry",
+            "kuskus",
+            "fasola szparagowa",
+            "masło ekstra",
+            "bułka tarta",
+            "olej rzepakowy uniwersalny",
+            "papryka suszona (przyprawa)",
+            "sól biała",
+            "cebula",
+            "marchew"
+          ],
+          "allergens": ["1", "7"],
+          "menuType": "normal"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "wtorek",
+      "date": "2023-02-27T23:00:00.000Z",
+      "dateString": "28.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa",
+          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "ingredients": [
+            "ciecierzyca w zalewie",
+            "pomidory w puszce",
+            "ziemniaki",
+            "papryka zielona",
+            "cebula",
+            "seler naciowy",
+            "olej rzepakowy uniwersalny",
+            "kolendra świeża",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "kmin rzymski"
+          ],
+          "allergens": ["9"],
+          "menuType": "normal"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "drugie danie",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "ingredients": [
+            "makaron dwujajeczny",
+            "szpinak mrożony",
+            "śmietana 18%",
+            "cebula",
+            "pomidory suszone",
+            "koncentrat pomidorowy 30%",
+            "ser gouda tłusty",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["1", "3", "7", "12"],
+          "menuType": "normal"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "środa",
+      "date": "2023-02-28T23:00:00.000Z",
+      "dateString": "01.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa",
+          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "ingredients": [
+            "kalafior mrożony",
+            "ziemniaki",
+            "marchew",
+            "pietruszka liście",
+            "jogurt naturalny",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "koper ogrodowy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "normal"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "drugie danie",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "ingredients": [
+            "ziemniaki",
+            "wieprzowina łopatka",
+            "jaja kurze całe",
+            "bułka tarta",
+            "olej rzepakowy uniwersalny",
+            "burak",
+            "koper ogrodowy"
+          ],
+          "allergens": ["1", "3"],
+          "menuType": "normal"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "czwartek",
+      "date": "2023-03-01T23:00:00.000Z",
+      "dateString": "02.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa",
+          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "ingredients": [
+            "włoszczyzna",
+            "koncentrat pomidorowy 30%",
+            "ryż biały",
+            "śmietana 18%",
+            "cebula",
+            "pomidory w puszce"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "normal"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "drugie danie",
+          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "ingredients": [
+            "wołowina",
+            "kasza gryczana",
+            "pomidor",
+            "koncentrat pomidorowy 30%",
+            "cukinia",
+            "śmietana 18%",
+            "papryka czerwona",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "pieprz czarny",
+            "sól biała"
+          ],
+          "allergens": ["7"],
+          "menuType": "normal"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "piątek",
+      "date": "2023-03-02T23:00:00.000Z",
+      "dateString": "03.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa",
+          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "ingredients": [
+            "brokuły",
+            "makaron ryżowy",
+            "śmietana 18%",
+            "marchew",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "olej rzepakowy uniwersalny",
+            "czosnek",
+            "sól biała"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "normal"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "drugie danie",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "ingredients": [
+            "miruna filet mrożony",
+            "ziemniaki",
+            "marchew mrożona",
+            "groszek zielony mrożony",
+            "mąka pszenna typ 500",
+            "jaja kurze całe",
+            "pietruszka liście",
+            "olej rzepakowy uniwersalny",
+            "pieprz czarny",
+            "sól biała",
+            "sok z cytryny"
+          ],
+          "allergens": ["1", "3", "4"],
+          "menuType": "normal"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "poniedziałek",
+      "date": "2023-02-26T23:00:00.000Z",
+      "dateString": "27.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa vege",
+          "servingName": "Zupa krem z cukini i marchewki",
+          "ingredients": [
+            "cukinia mrożona",
+            "marchew",
+            "śmietana 18%",
+            "chleb pszenny",
+            "pietruszka korzeń",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście"
+          ],
+          "allergens": ["1", "7"],
+          "menuType": "vege"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie vege",
+          "servingName": "Placuszki z batatów na grillowanych warzywach z sosem ziołowym",
+          "ingredients": [
+            "bataty",
+            "mąka pszenna typ 550",
+            "3. jaja",
+            "marchew",
+            "cukinia",
+            "papryka żółta",
+            "jogurt naturalny",
+            "bazylia suszona",
+            "kolendra suszona"
+          ],
+          "allergens": ["1", "3", "7"],
+          "menuType": "vege"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "wtorek",
+      "date": "2023-02-27T23:00:00.000Z",
+      "dateString": "28.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa vege",
+          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "ingredients": [
+            "ciecierzyca w zalewie",
+            "pomidory w puszce",
+            "ziemniaki",
+            "papryka zielona",
+            "cebula",
+            "seler naciowy",
+            "olej rzepakowy uniwersalny",
+            "kolendra świeża",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "kmin rzymski"
+          ],
+          "allergens": ["9"],
+          "menuType": "vege"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie vege",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "ingredients": [
+            "makaron dwujajeczny",
+            "szpinak mrożony",
+            "śmietana 18%",
+            "cebula",
+            "pomidory suszone",
+            "koncentrat pomidorowy 30%",
+            "ser gouda tłusty",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["1", "3", "7", "12"],
+          "menuType": "vege"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "środa",
+      "date": "2023-02-28T23:00:00.000Z",
+      "dateString": "01.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa vege",
+          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "ingredients": [
+            "kalafior mrożony",
+            "ziemniaki",
+            "marchew",
+            "pietruszka liście",
+            "jogurt naturalny",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "koper ogrodowy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "vege"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie vege",
+          "servingName": "Kotlet jajeczny z ziemniakami i buraczkami",
+          "ingredients": [
+            "jaja kurze całe",
+            "pietruszka liście",
+            "bułka tarta",
+            "ziemniaki",
+            "olej rzepakowy uniwersalny",
+            "koper ogrodowy",
+            "szczypiorek",
+            "burak"
+          ],
+          "allergens": ["1", "3"],
+          "menuType": "vege"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "czwartek",
+      "date": "2023-03-01T23:00:00.000Z",
+      "dateString": "02.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa vege",
+          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "ingredients": [
+            "włoszczyzna",
+            "koncentrat pomidorowy 30%",
+            "śmietana 12%",
+            "pomidory w puszce",
+            "cebula",
+            "ryż biały"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "vege"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie vege",
+          "servingName": "Kopytka w sosie z pieczonych warzyw z miksem sałat",
+          "ingredients": [
+            "olej słonecznikowy",
+            "papryka czerwona",
+            "pomidor",
+            "czosnek",
+            "seler korzeniowy",
+            "ogórek",
+            "kapusta pekińska",
+            "cebula",
+            "pietruszka korzeń",
+            "marchew",
+            "skrobia ziemniaczana (mąka ziemniaczana)",
+            "ziemniaki",
+            "mąka pszenna typ 750"
+          ],
+          "allergens": ["1", "9"],
+          "menuType": "vege"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "piątek",
+      "date": "2023-03-02T23:00:00.000Z",
+      "dateString": "03.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa vege",
+          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "ingredients": [
+            "brokuły",
+            "makaron ryżowy",
+            "śmietana 18%",
+            "marchew",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "olej rzepakowy uniwersalny",
+            "czosnek",
+            "sól biała"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "vege"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie vege",
+          "servingName": "Gulasz warzywny z ziemniakami puree i marchewką z groszkiem",
+          "ingredients": [
+            "marchew",
+            "cukinia",
+            "papryka żółta",
+            "por",
+            "pietruszka korzeń",
+            "ziemniaki",
+            "koperek świeży",
+            "olej rzepakowy tłoczony na zimno",
+            "pietruszka liście",
+            "skrobia ziemniaczana"
+          ],
+          "allergens": [],
+          "menuType": "vege"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "poniedziałek",
+      "date": "2023-02-26T23:00:00.000Z",
+      "dateString": "27.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezglutenowa",
+          "servingName": "Zupa krem z cukini i marchewki",
+          "ingredients": [
+            "cukinia mrożona",
+            "marchew",
+            "śmietana 18%",
+            "bułki zwykłe bezglutenowe",
+            "pietruszka korzeń",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście"
+          ],
+          "allergens": ["7"],
+          "menuType": "no-gluten"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezglutenowe",
+          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową",
+          "ingredients": [
+            "kurczak udka bez skóry",
+            "kasza jaglana bezglutenowa",
+            "fasola szparagowa",
+            "masło ekstra",
+            "olej rzepakowy uniwersalny",
+            "papryka suszona (przyprawa)",
+            "sól biała",
+            "cebula",
+            "marchew"
+          ],
+          "allergens": ["7"],
+          "menuType": "no-gluten"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "wtorek",
+      "date": "2023-02-27T23:00:00.000Z",
+      "dateString": "28.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezglutenowa",
+          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "ingredients": [
+            "ciecierzyca w zalewie",
+            "pomidory w puszce",
+            "ziemniaki",
+            "papryka zielona",
+            "cebula",
+            "seler naciowy",
+            "olej rzepakowy uniwersalny",
+            "kolendra świeża",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "kmin rzymski"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-gluten"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezglutenowe",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "ingredients": [
+            "makaron bezglutenowy",
+            "szpinak mrożony",
+            "śmietana 18%",
+            "cebula",
+            "pomidory suszone",
+            "koncentrat pomidorowy 30%",
+            "ser gouda tłusty",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["7", "12"],
+          "menuType": "no-gluten"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "środa",
+      "date": "2023-02-28T23:00:00.000Z",
+      "dateString": "01.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezglutenowa",
+          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "ingredients": [
+            "kalafior mrożony",
+            "ziemniaki",
+            "marchew",
+            "pietruszka liście",
+            "jogurt naturalny",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "koper ogrodowy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "no-gluten"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezglutenowe",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "ingredients": [
+            "ziemniaki",
+            "wieprzowina łopatka",
+            "bułki kajzerki bezglutenowe",
+            "jaja kurze całe",
+            "olej rzepakowy uniwersalny",
+            "koper ogrodowy",
+            "burak"
+          ],
+          "allergens": ["3"],
+          "menuType": "no-gluten"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "czwartek",
+      "date": "2023-03-01T23:00:00.000Z",
+      "dateString": "02.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezglutenowa",
+          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "ingredients": [
+            "pomidory w puszce",
+            "cebula",
+            "włoszczyzna",
+            "koncentrat pomidorowy 30%",
+            "ryż biały",
+            "śmietana 18%"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "no-gluten"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezglutenowe",
+          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "ingredients": [
+            "wołowina",
+            "kasza gryczana",
+            "pomidor",
+            "koncentrat pomidorowy 30%",
+            "cukinia",
+            "śmietana 18%",
+            "papryka czerwona",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "pieprz czarny",
+            "sól biała"
+          ],
+          "allergens": ["7"],
+          "menuType": "no-gluten"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "piątek",
+      "date": "2023-03-02T23:00:00.000Z",
+      "dateString": "03.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezglutenowa",
+          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "ingredients": [
+            "brokuły",
+            "makaron ryżowy",
+            "śmietana 18%",
+            "marchew",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "olej rzepakowy uniwersalny",
+            "czosnek",
+            "sól biała"
+          ],
+          "allergens": ["7", "9"],
+          "menuType": "no-gluten"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezglutenowe",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "ingredients": [
+            "miruna filet mrożony",
+            "ziemniaki",
+            "marchew mrożona",
+            "groszek zielony mrożony",
+            "mąka kukurydziana bezglutenowa",
+            "jaja kurze całe",
+            "pietruszka liście",
+            "olej rzepakowy uniwersalny",
+            "pieprz czarny",
+            "sól biała",
+            "sok z cytryny"
+          ],
+          "allergens": ["3", "4"],
+          "menuType": "no-gluten"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "poniedziałek",
+      "date": "2023-02-26T23:00:00.000Z",
+      "dateString": "27.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezmleczna",
+          "servingName": "Zupa krem z cukini i marchewki",
+          "ingredients": [
+            "cukinia mrożona",
+            "marchew",
+            "śmietanka roślinna 16%",
+            "chleb pszenny",
+            "pietruszka korzeń",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście"
+          ],
+          "allergens": ["1"],
+          "menuType": "no-milk"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezmleczne",
+          "servingName": "Podudzie z kurczaka z kuskus i fasolką szparagową",
+          "ingredients": [
+            "kurczak udka bez skóry",
+            "kuskus",
+            "fasola szparagowa",
+            "oliwa z oliwek",
+            "bułka tarta",
+            "olej rzepakowy uniwersalny",
+            "papryka suszona (przyprawa)",
+            "sól biała",
+            "cebula",
+            "marchew"
+          ],
+          "allergens": ["1"],
+          "menuType": "no-milk"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "wtorek",
+      "date": "2023-02-27T23:00:00.000Z",
+      "dateString": "28.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezmleczna",
+          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "ingredients": [
+            "ciecierzyca w zalewie",
+            "pomidory w puszce",
+            "ziemniaki",
+            "papryka zielona",
+            "cebula",
+            "seler naciowy",
+            "olej rzepakowy uniwersalny",
+            "kolendra świeża",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "kmin rzymski"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-milk"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezmleczne",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "ingredients": [
+            "makaron dwujajeczny",
+            "szpinak mrożony",
+            "śmietanka roślinna 16%",
+            "cebula",
+            "pomidory suszone",
+            "koncentrat pomidorowy 30%",
+            "ser vegański o smaku goudy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["1", "3", "12"],
+          "menuType": "no-milk"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "środa",
+      "date": "2023-02-28T23:00:00.000Z",
+      "dateString": "01.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezmleczna",
+          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "ingredients": [
+            "kalafior mrożony",
+            "ziemniaki",
+            "śmietanka roślinna 16%",
+            "marchew",
+            "pietruszka liście",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "koper ogrodowy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-milk"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezmleczne",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "ingredients": [
+            "ziemniaki",
+            "wieprzowina łopatka",
+            "bułka tarta",
+            "jaja kurze całe",
+            "olej rzepakowy uniwersalny",
+            "koper ogrodowy",
+            "burak"
+          ],
+          "allergens": ["1", "3"],
+          "menuType": "no-milk"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "czwartek",
+      "date": "2023-03-01T23:00:00.000Z",
+      "dateString": "02.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezmleczna",
+          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "ingredients": [
+            "pomidory w puszce",
+            "cebula",
+            "włoszczyzna",
+            "koncentrat pomidorowy 30%",
+            "ryż biały",
+            "mleko ryżowe"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-milk"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezmleczne",
+          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "ingredients": [
+            "wołowina",
+            "kasza gryczana",
+            "pomidor",
+            "koncentrat pomidorowy 30%",
+            "cukinia",
+            "śmietanka roślinna 16%",
+            "papryka czerwona",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście",
+            "czosnek",
+            "papryka suszona"
+          ],
+          "allergens": [],
+          "menuType": "no-milk"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "piątek",
+      "date": "2023-03-02T23:00:00.000Z",
+      "dateString": "03.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezmleczna",
+          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "ingredients": [
+            "brokuły",
+            "makaron ryżowy",
+            "śmietanka roślinna 16%",
+            "marchew",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "olej rzepakowy uniwersalny",
+            "czosnek",
+            "sól biała"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-milk"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezmleczne",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "ingredients": [
+            "miruna filet mrożony",
+            "ziemniaki",
+            "marchew mrożona",
+            "groszek zielony mrożony",
+            "mąka pszenna typ 500",
+            "jaja kurze całe",
+            "pietruszka liście",
+            "olej rzepakowy uniwersalny",
+            "pieprz czarny",
+            "sól biała",
+            "sok z cytryny"
+          ],
+          "allergens": ["1", "3", "4"],
+          "menuType": "no-milk"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "poniedziałek",
+      "date": "2023-02-26T23:00:00.000Z",
+      "dateString": "27.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezjajeczna",
+          "servingName": "Zupa krem z cukini i marchewki",
+          "ingredients": [
+            "cukinia mrożona",
+            "marchew",
+            "śmietanka roślinna 16%",
+            "bułki zwykłe bezglutenowe",
+            "pietruszka korzeń",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście"
+          ],
+          "allergens": [],
+          "menuType": "no-egg"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezjajeczne",
+          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową",
+          "ingredients": [
+            "kurczak udka bez skóry",
+            "kasza jaglana bezglutenowa",
+            "fasola szparagowa",
+            "oliwa z oliwek",
+            "olej rzepakowy uniwersalny",
+            "papryka suszona"
+          ],
+          "allergens": [],
+          "menuType": "no-egg"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "wtorek",
+      "date": "2023-02-27T23:00:00.000Z",
+      "dateString": "28.02",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezjajeczna",
+          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "ingredients": [
+            "ciecierzyca w zalewie",
+            "pomidory w puszce",
+            "ziemniaki",
+            "papryka zielona",
+            "cebula",
+            "seler naciowy",
+            "olej rzepakowy uniwersalny",
+            "kolendra świeża",
+            "czosnek",
+            "papryka suszona (przyprawa)",
+            "kmin rzymski"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-egg"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezjajeczne",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "ingredients": [
+            "makaron bezglutenowy",
+            "szpinak mrożony",
+            "śmietanka roślinna 16%",
+            "cebula",
+            "pomidory suszone",
+            "koncentrat pomidorowy 30%",
+            "ser vegański o smaku goudy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["12"],
+          "menuType": "no-egg"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "środa",
+      "date": "2023-02-28T23:00:00.000Z",
+      "dateString": "01.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezjajeczna",
+          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "ingredients": [
+            "kalafior mrożony",
+            "ziemniaki",
+            "śmietanka roślinna 16%",
+            "marchew",
+            "pietruszka liście",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "koper ogrodowy",
+            "olej rzepakowy uniwersalny"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-egg"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezjajeczne",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "ingredients": [
+            "ziemniaki",
+            "wieprzowina łopatka",
+            "bułki kajzerki bezglutenowe",
+            "olej rzepakowy uniwersalny",
+            "koper ogrodowy",
+            "burak"
+          ],
+          "allergens": [],
+          "menuType": "no-egg"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "czwartek",
+      "date": "2023-03-01T23:00:00.000Z",
+      "dateString": "02.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezjajeczna",
+          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "ingredients": [
+            "pomidory w puszce",
+            "cebula",
+            "włoszczyzna",
+            "koncentrat pomidorowy 30%",
+            "ryż biały",
+            "mleko ryżowe"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-egg"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezjajeczne",
+          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "ingredients": [
+            "wołowina",
+            "kasza gryczana",
+            "pomidor",
+            "koncentrat pomidorowy 30%",
+            "cukinia",
+            "śmietanka roślinna 16%",
+            "papryka czerwona",
+            "cebula",
+            "olej rzepakowy uniwersalny",
+            "pietruszka liście",
+            "czosnek",
+            "papryka suszona"
+          ],
+          "allergens": [],
+          "menuType": "no-egg"
+        }
+      ]
+    },
+    {
+      "dayOfWeek": "piątek",
+      "date": "2023-03-02T23:00:00.000Z",
+      "dateString": "03.03",
+      "servings": [
+        {
+          "mealType": "soup",
+          "servingTitle": "zupa bezjajeczna",
+          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "ingredients": [
+            "brokuły",
+            "makaron ryżowy",
+            "śmietanka roślinna 16%",
+            "marchew",
+            "seler korzeniowy",
+            "pietruszka korzeń",
+            "olej rzepakowy uniwersalny",
+            "czosnek",
+            "sól biała"
+          ],
+          "allergens": ["9"],
+          "menuType": "no-egg"
+        },
+        {
+          "mealType": "mainCourse",
+          "servingTitle": "II danie bezjajeczne",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "ingredients": [
+            "miruna filet mrożony",
+            "ziemniaki",
+            "marchew mrożona",
+            "groszek zielony mrożony",
+            "mąka kukurydziana bezglutenowa",
+            "pietruszka liście",
+            "olej rzepakowy uniwersalny",
+            "pieprz czarny",
+            "sól biała",
+            "sok z cytryny",
+            "śmietanka roślinna 16%"
+          ],
+          "allergens": ["4"],
+          "menuType": "no-egg"
+        }
+      ]
+    }
+  ],
+  "allergens": [
+    ["1", "Zboża zawierające gluten"],
+    ["2", "Skorupiaki i produkty pochodne"],
+    ["3", "Jaja i produkty pochodne"],
+    ["4", "Ryby i produkty pochodne"],
+    ["5", "Orzeszki ziemne (arachidowe) i produkty pochodne"],
+    ["6", "Soja i produkty pochodne"],
+    ["7", "Mleko i produkty pochodne (łącznie z laktozą)"],
+    ["8", "Orzechy"],
+    ["9", "Seler i produkty pochodne"],
+    ["10", "Gorczyca i produkty pochodne"],
+    ["11", "Nasiona sezamu i produkty pochodne"],
+    ["12", "Dwutlenek siarki i siarczyny"],
+    ["13", "Łubin i produkty pochodne"],
+    ["14", "Mięczaki i produkty pochodne"]
+  ]
+}

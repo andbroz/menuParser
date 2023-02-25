@@ -2,11 +2,13 @@ import { chromium, devices } from 'playwright';
 import path from 'node:path';
 
 import { parseMenu } from './src/parseMenu';
-import { readFile } from './src/utils';
+import { readFile, saveFile } from './src/utils';
 
 const fileName = 'menu.txt';
 
 const filePath = path.join(__dirname, fileName);
+
+const outputFile = path.join(__dirname, 'menu.json');
 
 (async () => {
   let rawMenu: string[] = [];
@@ -21,11 +23,13 @@ const filePath = path.join(__dirname, fileName);
     throw new Error('Menu file was not read correctly');
   }
 
-  const parsedMenu = parseMenu(rawMenu);
+  const { parsedMenu, allergensMap } = parseMenu(rawMenu);
 
-  for (let item of parsedMenu) {
-    console.dir(item, { depth: 4 });
-  }
+  const allergens = Array.from(allergensMap);
+
+  const json = JSON.stringify({ parsedMenu, allergens });
+
+  await saveFile(outputFile, json);
 
   // await runApp();
 })();
