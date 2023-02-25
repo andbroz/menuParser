@@ -226,7 +226,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa vege",
-          "servingName": "Zupa krem z cukini i marchewki",
+          "servingName": "Zupa krem z cukini i marchewki - vege",
           "ingredients": [
             "cukinia mrożona",
             "marchew",
@@ -243,7 +243,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie vege",
-          "servingName": "Placuszki z batatów na grillowanych warzywach z sosem ziołowym",
+          "servingName": "Placuszki z batatów na grillowanych warzywach z sosem ziołowym - vege",
           "ingredients": [
             "bataty",
             "mąka pszenna typ 550",
@@ -268,7 +268,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa vege",
-          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "servingName": "Hiszpańska zupa z ciecierzycy - vege",
           "ingredients": [
             "ciecierzyca w zalewie",
             "pomidory w puszce",
@@ -288,7 +288,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie vege",
-          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym - vege",
           "ingredients": [
             "makaron dwujajeczny",
             "szpinak mrożony",
@@ -312,7 +312,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa vege",
-          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "servingName": "Zupa kalafiorowa z ziemniakami - vege",
           "ingredients": [
             "kalafior mrożony",
             "ziemniaki",
@@ -330,7 +330,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie vege",
-          "servingName": "Kotlet jajeczny z ziemniakami i buraczkami",
+          "servingName": "Kotlet jajeczny z ziemniakami i buraczkami - vege",
           "ingredients": [
             "jaja kurze całe",
             "pietruszka liście",
@@ -354,7 +354,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa vege",
-          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "servingName": "Zupa pomidorowa zabielana z ryżem - Vege",
           "ingredients": [
             "włoszczyzna",
             "koncentrat pomidorowy 30%",
@@ -369,7 +369,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie vege",
-          "servingName": "Kopytka w sosie z pieczonych warzyw z miksem sałat",
+          "servingName": "Kopytka w sosie z pieczonych warzyw z miksem sałat - Vege",
           "ingredients": [
             "olej słonecznikowy",
             "papryka czerwona",
@@ -398,7 +398,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa vege",
-          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "servingName": "Zupa brokułowa z makaronem ryżowym - vege",
           "ingredients": [
             "brokuły",
             "makaron ryżowy",
@@ -416,7 +416,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie vege",
-          "servingName": "Gulasz warzywny z ziemniakami puree i marchewką z groszkiem",
+          "servingName": "Gulasz warzywny z ziemniakami puree i marchewką z groszkiem - vege",
           "ingredients": [
             "marchew",
             "cukinia",
@@ -442,7 +442,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezglutenowa",
-          "servingName": "Zupa krem z cukini i marchewki",
+          "servingName": "Zupa krem z cukini i marchewki - BG",
           "ingredients": [
             "cukinia mrożona",
             "marchew",
@@ -459,7 +459,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezglutenowe",
-          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową",
+          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową - BG",
           "ingredients": [
             "kurczak udka bez skóry",
             "kasza jaglana bezglutenowa",
@@ -484,7 +484,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezglutenowa",
-          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "servingName": "Hiszpańska zupa z ciecierzycy - BG BM BJ",
           "ingredients": [
             "ciecierzyca w zalewie",
             "pomidory w puszce",
@@ -504,7 +504,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezglutenowe",
-          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym - BG",
           "ingredients": [
             "makaron bezglutenowy",
             "szpinak mrożony",
@@ -528,7 +528,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezglutenowa",
-          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "servingName": "Zupa kalafiorowa z ziemniakami - BG",
           "ingredients": [
             "kalafior mrożony",
             "ziemniaki",
@@ -546,7 +546,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezglutenowe",
-          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami - BG",
           "ingredients": [
             "ziemniaki",
             "wieprzowina łopatka",
@@ -569,7 +569,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezglutenowa",
-          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "servingName": "Zupa pomidorowa zabielana z ryżem - BG",
           "ingredients": [
             "pomidory w puszce",
             "cebula",
@@ -584,7 +584,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezglutenowe",
-          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "servingName": "Kasza gryczana z wołowiną i warzywami - BG",
           "ingredients": [
             "wołowina",
             "kasza gryczana",
@@ -614,7 +614,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezglutenowa",
-          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "servingName": "Zupa brokułowa z makaronem ryżowym - BG",
           "ingredients": [
             "brokuły",
             "makaron ryżowy",
@@ -632,7 +632,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezglutenowe",
-          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem - BG",
           "ingredients": [
             "miruna filet mrożony",
             "ziemniaki",
@@ -659,7 +659,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezmleczna",
-          "servingName": "Zupa krem z cukini i marchewki",
+          "servingName": "Zupa krem z cukini i marchewki - BM",
           "ingredients": [
             "cukinia mrożona",
             "marchew",
@@ -676,7 +676,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezmleczne",
-          "servingName": "Podudzie z kurczaka z kuskus i fasolką szparagową",
+          "servingName": "Podudzie z kurczaka z kuskus i fasolką szparagową - BM",
           "ingredients": [
             "kurczak udka bez skóry",
             "kuskus",
@@ -702,7 +702,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezmleczna",
-          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "servingName": "Hiszpańska zupa z ciecierzycy - BG BM BJ",
           "ingredients": [
             "ciecierzyca w zalewie",
             "pomidory w puszce",
@@ -722,7 +722,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezmleczne",
-          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym - BM",
           "ingredients": [
             "makaron dwujajeczny",
             "szpinak mrożony",
@@ -746,7 +746,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezmleczna",
-          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "servingName": "Zupa kalafiorowa z ziemniakami - BM BJ",
           "ingredients": [
             "kalafior mrożony",
             "ziemniaki",
@@ -764,7 +764,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezmleczne",
-          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami - BM",
           "ingredients": [
             "ziemniaki",
             "wieprzowina łopatka",
@@ -787,7 +787,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezmleczna",
-          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "servingName": "Zupa pomidorowa zabielana z ryżem - BM",
           "ingredients": [
             "pomidory w puszce",
             "cebula",
@@ -802,7 +802,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezmleczne",
-          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "servingName": "Kasza gryczana z wołowiną i warzywami - BM BJ",
           "ingredients": [
             "wołowina",
             "kasza gryczana",
@@ -830,7 +830,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezmleczna",
-          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "servingName": "Zupa brokułowa z makaronem ryżowym - BM BJ",
           "ingredients": [
             "brokuły",
             "makaron ryżowy",
@@ -848,7 +848,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezmleczne",
-          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem - BM",
           "ingredients": [
             "miruna filet mrożony",
             "ziemniaki",
@@ -875,7 +875,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezjajeczna",
-          "servingName": "Zupa krem z cukini i marchewki",
+          "servingName": "Zupa krem z cukini i marchewki - BJ",
           "ingredients": [
             "cukinia mrożona",
             "marchew",
@@ -892,7 +892,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezjajeczne",
-          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową",
+          "servingName": "Podudzie z kurczaka z kaszą jaglaną i fasolką szparagową - BJ",
           "ingredients": [
             "kurczak udka bez skóry",
             "kasza jaglana bezglutenowa",
@@ -914,7 +914,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezjajeczna",
-          "servingName": "Hiszpańska zupa z ciecierzycy",
+          "servingName": "Hiszpańska zupa z ciecierzycy - BG BM BJ",
           "ingredients": [
             "ciecierzyca w zalewie",
             "pomidory w puszce",
@@ -934,7 +934,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezjajeczne",
-          "servingName": "Makaron w sosie śmietanowo-szpinakowym",
+          "servingName": "Makaron w sosie śmietanowo-szpinakowym - BJ",
           "ingredients": [
             "makaron bezglutenowy",
             "szpinak mrożony",
@@ -958,7 +958,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezjajeczna",
-          "servingName": "Zupa kalafiorowa z ziemniakami",
+          "servingName": "Zupa kalafiorowa z ziemniakami - BM BJ",
           "ingredients": [
             "kalafior mrożony",
             "ziemniaki",
@@ -976,7 +976,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezjajeczne",
-          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami",
+          "servingName": "Kotlet mielony z ziemniakami puree i buraczkami - BJ",
           "ingredients": [
             "ziemniaki",
             "wieprzowina łopatka",
@@ -998,7 +998,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezjajeczna",
-          "servingName": "Zupa pomidorowa zabielana z ryżem",
+          "servingName": "Zupa pomidorowa zabielana z ryżem - BJ",
           "ingredients": [
             "pomidory w puszce",
             "cebula",
@@ -1013,7 +1013,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezjajeczne",
-          "servingName": "Kasza gryczana z wołowiną i warzywami",
+          "servingName": "Kasza gryczana z wołowiną i warzywami - BM BJ",
           "ingredients": [
             "wołowina",
             "kasza gryczana",
@@ -1041,7 +1041,7 @@
         {
           "mealType": "soup",
           "servingTitle": "zupa bezjajeczna",
-          "servingName": "Zupa brokułowa z makaronem ryżowym",
+          "servingName": "Zupa brokułowa z makaronem ryżowym - BM BJ",
           "ingredients": [
             "brokuły",
             "makaron ryżowy",
@@ -1059,7 +1059,7 @@
         {
           "mealType": "mainCourse",
           "servingTitle": "II danie bezjajeczne",
-          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem",
+          "servingName": "Miruna w cieście z ziemniakami gotowanymi i marchewką z groszkiem - BJ",
           "ingredients": [
             "miruna filet mrożony",
             "ziemniaki",
@@ -1094,5 +1094,84 @@
     ["12", "Dwutlenek siarki i siarczyny"],
     ["13", "Łubin i produkty pochodne"],
     ["14", "Mięczaki i produkty pochodne"]
+  ],
+  "ingredients": [
+    "cukinia mrożona",
+    "marchew",
+    "śmietana 18%",
+    "chleb pszenny",
+    "pietruszka korzeń",
+    "cebula",
+    "olej rzepakowy uniwersalny",
+    "pietruszka liście",
+    "kurczak udka bez skóry",
+    "kuskus",
+    "fasola szparagowa",
+    "masło ekstra",
+    "bułka tarta",
+    "papryka suszona (przyprawa)",
+    "sól biała",
+    "ciecierzyca w zalewie",
+    "pomidory w puszce",
+    "ziemniaki",
+    "papryka zielona",
+    "seler naciowy",
+    "kolendra świeża",
+    "czosnek",
+    "kmin rzymski",
+    "makaron dwujajeczny",
+    "szpinak mrożony",
+    "pomidory suszone",
+    "koncentrat pomidorowy 30%",
+    "ser gouda tłusty",
+    "kalafior mrożony",
+    "jogurt naturalny",
+    "seler korzeniowy",
+    "koper ogrodowy",
+    "wieprzowina łopatka",
+    "jaja kurze całe",
+    "burak",
+    "włoszczyzna",
+    "ryż biały",
+    "wołowina",
+    "kasza gryczana",
+    "pomidor",
+    "cukinia",
+    "papryka czerwona",
+    "pieprz czarny",
+    "brokuły",
+    "makaron ryżowy",
+    "miruna filet mrożony",
+    "marchew mrożona",
+    "groszek zielony mrożony",
+    "mąka pszenna typ 500",
+    "sok z cytryny",
+    "bataty",
+    "mąka pszenna typ 550",
+    "3. jaja",
+    "papryka żółta",
+    "bazylia suszona",
+    "kolendra suszona",
+    "szczypiorek",
+    "śmietana 12%",
+    "olej słonecznikowy",
+    "ogórek",
+    "kapusta pekińska",
+    "skrobia ziemniaczana (mąka ziemniaczana)",
+    "mąka pszenna typ 750",
+    "por",
+    "koperek świeży",
+    "olej rzepakowy tłoczony na zimno",
+    "skrobia ziemniaczana",
+    "bułki zwykłe bezglutenowe",
+    "kasza jaglana bezglutenowa",
+    "makaron bezglutenowy",
+    "bułki kajzerki bezglutenowe",
+    "mąka kukurydziana bezglutenowa",
+    "śmietanka roślinna 16%",
+    "oliwa z oliwek",
+    "ser vegański o smaku goudy",
+    "mleko ryżowe",
+    "papryka suszona"
   ]
 }

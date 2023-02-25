@@ -2,7 +2,7 @@ import { chromium, devices, Page } from 'playwright';
 import path from 'node:path';
 import * as dotenv from 'dotenv';
 
-import { parseMenu, extractIngredients, Serving } from './src/parseMenu';
+import { parseMenu, extractIngredients, Serving, MenuItems } from './src/parseMenu';
 import { readFile, saveFile } from './src/utils';
 
 dotenv.config();
@@ -45,6 +45,7 @@ const outputFile = path.join(__dirname, 'menu.json');
 
 async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<string>) {
   let isAllIngriedientsAvailable = false;
+  let skipIngredientsCheck = true;
 
   // preparation of browser
   const browser = await chromium.launch({ headless: false, slowMo: 200 });
@@ -63,48 +64,46 @@ async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<s
 
   await login(page);
 
-  await page.goto('/');
-  await page.waitForLoadState('domcontentloaded');
-
-  await page.getByRole('link', { name: ' Jadłospisy ' }).click();
-  await page.getByRole('link', { name: ' Składniki' }).click();
-
-  const notFoundIngredients = await addIngredients(page, ingredients);
-
-  if (notFoundIngredients.size > 0) {
+  if (!skipIngredientsCheck) {
     await page.goto('/');
     await page.waitForLoadState('domcontentloaded');
+
     await page.getByRole('link', { name: ' Jadłospisy ' }).click();
-    await page.getByRole('link', { name: ' Półprodukty' }).click();
+    await page.getByRole('link', { name: ' Składniki' }).click();
 
-    const notFoundSemiProducts = await addIngredients(page, notFoundIngredients, false);
+    const notFoundIngredients = await addIngredients(page, ingredients);
 
-    if (notFoundSemiProducts.size > 0) {
-      console.log('Not found semiproducts:', Array.from(notFoundSemiProducts));
+    if (notFoundIngredients.size > 0) {
+      await page.goto('/');
+      await page.waitForLoadState('domcontentloaded');
+      await page.getByRole('link', { name: ' Jadłospisy ' }).click();
+      await page.getByRole('link', { name: ' Półprodukty' }).click();
+
+      const notFoundSemiProducts = await addIngredients(page, notFoundIngredients, false);
+
+      if (notFoundSemiProducts.size > 0) {
+        console.log('Not found semiproducts:', Array.from(notFoundSemiProducts));
+      } else {
+        isAllIngriedientsAvailable = true;
+      }
     } else {
       isAllIngriedientsAvailable = true;
     }
-  } else {
-    isAllIngriedientsAvailable = true;
+
+    if (!isAllIngriedientsAvailable) {
+      console.log('Not found ingresients:', Array.from(notFoundIngredients));
+      console.log('Dodaj brakujące składniki do półproduktów');
+      console.log('Zamykam skrypt');
+      process.exit();
+    }
   }
 
-  if (!isAllIngriedientsAvailable) {
-    console.log('Not found ingresients:', Array.from(notFoundIngredients));
-    console.log('Dodaj brakujące składniki do półproduktów');
-    console.log('Zamykam skrypt');
-    process.exit();
-  }
+  await page.goto('/');
+  await page.waitForLoadState('domcontentloaded');
+  await page.getByRole('link', { name: ' Jadłospisy ' }).click();
+  await page.getByRole('link', { name: ' Przepisy' }).click();
 
-  // const serving = menuData.parsedMenu[0].servings[0];
-
-  // const servingExists = await menuItemExists(page, serving);
-
-  // if (servingExists === false) {
-  //   await page.getByRole('link', { name: ' Dodaj przepis' }).click();
-  //   await createRecipe(page, serving);
-  // }
-
-  // await page.pause();
+  await addRecipies(page, menuData.parsedMenu);
 
   // Teardown
   await context.close();
@@ -144,12 +143,10 @@ async function createRecipe(page: Page, serving: Serving) {
     if (!isEmptyList) {
       await page.getByRole('option', { name: ingredient, exact: true }).click();
     }
-
-    await page.pause();
   }
-  await page.pause();
+  // await page.pause();
 
-  // await page.getByRole('button', { name: 'Utwórz' }).click();
+  await page.getByRole('button', { name: 'Utwórz' }).click();
 }
 
 async function addIngredients(
@@ -211,4 +208,16 @@ async function addIngredients(
   // });
 
   return notFoundingredients;
+}
+
+async function addRecipies(page: Page, menu: MenuItems) {
+  for (const menuItem of menu) {
+    for (const serving of menuItem.servings) {
+      const servingExists = await menuItemExists(page, serving);
+      if (servingExists === false) {
+        await page.getByRole('link', { name: ' Dodaj przepis' }).click();
+        await createRecipe(page, serving);
+      }
+    }
+  }
 }
