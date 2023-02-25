@@ -155,7 +155,7 @@ function parseServing(item: string): Partial<Serving> {
 
   return {
     servingTitle,
-    servingName,
+    servingName: menuTypes ? `${servingName} - ${menuTypes}` : servingName,
     ingredients,
     allergens,
     menuType: getMealType(servingTitle),
@@ -177,4 +177,18 @@ function getMealType(title: string): MenuType {
   }
 
   return 'normal';
+}
+
+export function extractIngredients(menu: MenuItems) {
+  const ingredientsSet = new Set<string>();
+
+  for (const menuItem of menu) {
+    for (const servings of menuItem.servings) {
+      for (const ingredient of servings.ingredients) {
+        ingredientsSet.add(ingredient);
+      }
+    }
+  }
+
+  return ingredientsSet;
 }

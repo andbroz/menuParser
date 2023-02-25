@@ -18,6 +18,7 @@
   "dependencies": {
     "date-fns": "^2.29.3",
     "docx-parser": "^0.2.1",
+    "dotenv": "^16.0.3",
     "playwright": "^1.31.1"
   }
 }
