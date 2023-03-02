@@ -32,20 +32,19 @@ const outputFile = path.join(__dirname, 'menu.json');
   const menuData = parseMenu(rawMenu);
   const ingredients = extractIngredients(menuData.parsedMenu);
 
-  // const json = JSON.stringify({
-  //   parsedMenu: menuData.parsedMenu,
-  //   allergens: Array.from(menuData.allergensMap),
-  //   ingredients: Array.from(ingredients),
-  // });
+  const json = JSON.stringify({
+    parsedMenu: menuData.parsedMenu,
+    allergens: Array.from(menuData.allergensMap),
+    ingredients: Array.from(ingredients),
+  });
 
-  // await saveFile(outputFile, json);
+  await saveFile(outputFile, json);
 
   await runApp(menuData, ingredients);
 })();
 
 async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<string>) {
-  let isAllIngriedientsAvailable = false;
-  let skipIngredientsCheck = true;
+  let skipIngredientsCheck = false;
 
   // preparation of browser
   const browser = await chromium.launch({ headless: false, slowMo: 200 });
@@ -83,18 +82,10 @@ async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<s
 
       if (notFoundSemiProducts.size > 0) {
         console.log('Not found semiproducts:', Array.from(notFoundSemiProducts));
-      } else {
-        isAllIngriedientsAvailable = true;
+        console.log('Dodaj brakujące składniki do półproduktów');
+        console.log('Zamykam skrypt');
+        process.exit();
       }
-    } else {
-      isAllIngriedientsAvailable = true;
-    }
-
-    if (!isAllIngriedientsAvailable) {
-      console.log('Not found ingresients:', Array.from(notFoundIngredients));
-      console.log('Dodaj brakujące składniki do półproduktów');
-      console.log('Zamykam skrypt');
-      process.exit();
     }
   }
 
@@ -141,7 +132,7 @@ async function createRecipe(page: Page, serving: Serving) {
     const isEmptyList = await page.getByText('Brak wyników').count();
 
     if (!isEmptyList) {
-      await page.getByRole('option', { name: ingredient, exact: true }).click();
+      await page.getByRole('option', { name: ingredient, exact: true }).first().click();
     }
   }
   // await page.pause();
@@ -211,13 +202,25 @@ async function addIngredients(
 }
 
 async function addRecipies(page: Page, menu: MenuItems) {
+  let totalItems = 0;
+  let addedItems = 0;
+  const skippedItems: Serving[] = [];
+
   for (const menuItem of menu) {
     for (const serving of menuItem.servings) {
+      totalItems++;
       const servingExists = await menuItemExists(page, serving);
       if (servingExists === false) {
         await page.getByRole('link', { name: ' Dodaj przepis' }).click();
         await createRecipe(page, serving);
+        addedItems++;
+        continue;
       }
+      skippedItems.push(serving);
     }
   }
+
+  console.log('Summary of added serving');
+  console.log(`Added: ${addedItems} of ${totalItems}`);
+  console.log('Skipped Items:', JSON.stringify(skippedItems));
 }
