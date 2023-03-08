@@ -12,3 +12,21 @@ export async function saveFile(path: string, data: string) {
     console.error(err);
   }
 }
+
+export async function isExistingFile(path: string) {
+  if (path.length === 0) {
+    return false;
+  }
+
+  try {
+    const stat = await fs.stat(path);
+
+    if (stat.isFile()) {
+      return true;
+    }
+  } catch (err) {
+    return false;
+  }
+
+  return false;
+}

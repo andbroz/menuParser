@@ -4,12 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "node -r ts-node/register index.ts -s"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^18.14.1",
+    "@types/node": "^18.14.6",
     "prettier": "^2.8.4",
     "ts-node": "^10.9.1",
     "tslib": "^2.5.0",

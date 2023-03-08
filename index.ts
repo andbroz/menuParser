@@ -1,28 +1,65 @@
 import { chromium, devices, Page } from 'playwright';
 import path from 'node:path';
 import * as dotenv from 'dotenv';
+import { Command } from 'commander';
 
 import { parseMenu, extractIngredients, Serving, MenuItems } from './src/parseMenu';
-import { readFile, saveFile } from './src/utils';
+import { readFile, saveFile, isExistingFile } from './src/utils';
+
+const program = new Command('menuProcessor');
+
+program
+  .version('0.0.1')
+  .requiredOption('-f, --filename <filename>', 'file to be processed', 'menu.txt')
+  .option('-o, --output <filename>', 'Filename to save a processed menu', 'menu.json')
+  .option('-i, --skipIngredients', 'skips checking of ingredients', 'false')
+  .option('-r, --skipAddRecipies', 'skips adding recipies', 'false');
+
+program.parse(process.argv);
+
+const options = program.opts<{
+  filename: string;
+  output: string;
+  skipIngredients: boolean;
+  skipAddRecipies: boolean;
+}>();
 
 dotenv.config();
 
 const email = process.env.ZP_LOGIN ?? '';
 const password = process.env.ZP_PASS ?? '';
+const baseURL = process.env.BASE_URL; //'https://aplikacja.zamowposilek.pl';
 
-const fileName = 'menu.txt';
+if (!baseURL) {
+  throw new Error(`Base URL is missing. Check your env variable "BASE_URL"`);
+}
+
+const timestamp = Date.now();
+
+const fileName = options.filename;
+const outputFileName = options.output;
+const skippedRecipieFilename = `skipped-recipies_${timestamp}.json`;
 
 const filePath = path.join(__dirname, fileName);
-
-const outputFile = path.join(__dirname, 'menu.json');
+const outputFilePath = path.join(__dirname, outputFileName);
+const skippedRecipiesPath = path.join(__dirname, skippedRecipieFilename);
 
 (async () => {
   let rawMenu: string[] = [];
 
+  const isFileUnderMaybeFilePath = await isExistingFile(filePath);
+
+  if (isFileUnderMaybeFilePath === false) {
+    console.error(`The file "${fileName}" at path "${filePath}" does not exists`);
+    process.exit();
+  }
+
   try {
+    console.log(`Reading file "${fileName}" at "${filePath}"`);
     rawMenu = await readFile(filePath);
   } catch (error) {
-    console.error(error);
+    console.error(`Error reading file ${filePath}`, error);
+    process.exit();
   }
 
   if (rawMenu.length === 0) {
@@ -38,13 +75,14 @@ const outputFile = path.join(__dirname, 'menu.json');
     ingredients: Array.from(ingredients),
   });
 
-  await saveFile(outputFile, json);
+  await saveFile(outputFilePath, json);
 
   await runApp(menuData, ingredients);
 })();
 
 async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<string>) {
-  let skipIngredientsCheck = false;
+  const skipIngredientsCheck = options.skipIngredients;
+  const skipAddRecipies = options.skipAddRecipies;
 
   // preparation of browser
   const browser = await chromium.launch({ headless: false, slowMo: 200 });
@@ -54,7 +92,7 @@ async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<s
     ...device,
     screen: { width: 1920, height: 1080 },
     viewport: { width: 1920, height: 1080 },
-    baseURL: 'https://aplikacja.zamowposilek.pl',
+    baseURL,
   });
   const page = await context.newPage();
 
@@ -89,14 +127,17 @@ async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<s
     }
   }
 
-  await page.goto('/');
-  await page.waitForLoadState('domcontentloaded');
-  await page.getByRole('link', { name: ' Jadłospisy ' }).click();
-  await page.getByRole('link', { name: ' Przepisy' }).click();
+  if (!skipAddRecipies) {
+    await page.goto('/');
+    await page.waitForLoadState('domcontentloaded');
+    await page.getByRole('link', { name: ' Jadłospisy ' }).click();
+    await page.getByRole('link', { name: ' Przepisy' }).click();
 
-  await addRecipies(page, menuData.parsedMenu);
+    await addRecipies(page, menuData.parsedMenu);
+  }
 
   // Teardown
+  await page.close();
   await context.close();
   await browser.close();
 }
@@ -123,7 +164,7 @@ async function createRecipe(page: Page, serving: Serving) {
   await page.getByLabel('* Nazwa').click();
   await page.getByLabel('* Nazwa').fill(serving.servingName);
 
-  for (const [index, ingredient] of serving.ingredients.entries()) {
+  for (const ingredient of serving.ingredients) {
     await page.getByRole('link', { name: ' Dodaj składnik' }).click();
     await page.getByRole('textbox', { name: 'Proszę wybrać składnik' }).click();
 
@@ -135,8 +176,6 @@ async function createRecipe(page: Page, serving: Serving) {
       await page.getByRole('option', { name: ingredient, exact: true }).first().click();
     }
   }
-  // await page.pause();
-
   await page.getByRole('button', { name: 'Utwórz' }).click();
 }
 
@@ -145,9 +184,6 @@ async function addIngredients(
   ingredients: Set<string>,
   isSingleProduct: boolean = true,
 ) {
-  let foundItems = 0;
-  let enabledItemsCount = 0;
-
   const notFoundingredients = new Set<string>();
 
   for (const ingredient of ingredients) {
@@ -158,7 +194,7 @@ async function addIngredients(
     }
 
     await page.getByRole('button', { name: 'Pokaż' }).click();
-    await page.waitForLoadState('domcontentloaded');
+    await page.waitForLoadState('load');
 
     const row = await page
       .getByRole('row')
@@ -172,8 +208,6 @@ async function addIngredients(
       continue;
     }
 
-    foundItems++;
-
     const element = await row.getByRole('checkbox', { includeHidden: true });
 
     const isChecked = await element.isChecked();
@@ -186,17 +220,8 @@ async function addIngredients(
         .nth(3)
         .locator('span')
         .click();
-
-      enabledItemsCount++;
     }
   }
-
-  // console.log({
-  //   foundItems: foundItems,
-  //   enabledItemsCount,
-  //   allItemsCount: ingredients.size,
-  //   notFoundElements,
-  // });
 
   return notFoundingredients;
 }
@@ -222,5 +247,8 @@ async function addRecipies(page: Page, menu: MenuItems) {
 
   console.log('Summary of added serving');
   console.log(`Added: ${addedItems} of ${totalItems}`);
-  console.log('Skipped Items:', JSON.stringify(skippedItems));
+
+  const json = JSON.stringify({ addedItems, totalItems, skippedItems: skippedItems });
+
+  await saveFile(skippedRecipiesPath, json);
 }
