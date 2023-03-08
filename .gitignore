@@ -6,3 +6,6 @@ node_modules/
 menu.docx
 
 .env
+
+*.txt
+menu*.json
