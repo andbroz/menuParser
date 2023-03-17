@@ -20,8 +20,8 @@ program.parse(process.argv);
 const options = program.opts<{
   filename: string;
   output: string;
-  skipIngredients: boolean;
-  skipAddRecipies: boolean;
+  skipIngredients: 'true' | 'false';
+  skipAddRecipies: 'true' | 'false';
 }>();
 
 dotenv.config();
@@ -81,8 +81,8 @@ const skippedRecipiesPath = path.join(__dirname, skippedRecipieFilename);
 })();
 
 async function runApp(menuData: ReturnType<typeof parseMenu>, ingredients: Set<string>) {
-  const skipIngredientsCheck = options.skipIngredients;
-  const skipAddRecipies = options.skipAddRecipies;
+  const skipIngredientsCheck = options.skipIngredients === 'true';
+  const skipAddRecipies = options.skipAddRecipies === 'true';
 
   // preparation of browser
   const browser = await chromium.launch({ headless: false, slowMo: 200 });
