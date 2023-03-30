@@ -138,7 +138,7 @@ function parseServing(item: string): Partial<Serving> {
       ? ingredientsWithAllergensArr?.slice(0, startOfAllergensIndex)
       : ingredientsWithAllergensArr;
 
-  const ingredients = ingredientsString?.split(',').map(v => v.trim());
+  const ingredients = ingredientsString?.split(', ').map(v => v.trim());
 
   let allergens: string[] = [];
 
